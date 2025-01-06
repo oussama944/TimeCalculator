@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeCalculator.Domain", "TimeCalculator.Domain\TimeCalculator.Domain.csproj", "{8C59BA98-4175-410C-9DB5-DC06FC6B9115}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeCalculator.Application", "TimeCalculator.Application\TimeCalculator.Application.csproj", "{7818EAD8-2021-48A6-B213-70459495F49D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D68D7E12-787E-44D8-8739-EC3EB2CEBA53}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{556B9000-D323-4C3E-8EEB-F8379AF57D1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeCalculator.Infrastructure", "TimeCalculator.Infrastructure\TimeCalculator.Infrastructure.csproj", "{CF075169-22CF-4931-B891-ADF3D9CBDD5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeCalculator.WebAPI", "TimeCalculator.WebAPI\TimeCalculator.WebAPI.csproj", "{A7D9839C-F625-4BF6-96A4-8E14AA625F5D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeCalculator.Desktop", "TimeCalculator.Desktop\TimeCalculator.Desktop.csproj", "{E27EAC58-773F-4E2B-94E3-314F413BD9CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8C59BA98-4175-410C-9DB5-DC06FC6B9115}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C59BA98-4175-410C-9DB5-DC06FC6B9115}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C59BA98-4175-410C-9DB5-DC06FC6B9115}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C59BA98-4175-410C-9DB5-DC06FC6B9115}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7818EAD8-2021-48A6-B213-70459495F49D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7818EAD8-2021-48A6-B213-70459495F49D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7818EAD8-2021-48A6-B213-70459495F49D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7818EAD8-2021-48A6-B213-70459495F49D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF075169-22CF-4931-B891-ADF3D9CBDD5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF075169-22CF-4931-B891-ADF3D9CBDD5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF075169-22CF-4931-B891-ADF3D9CBDD5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF075169-22CF-4931-B891-ADF3D9CBDD5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7D9839C-F625-4BF6-96A4-8E14AA625F5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7D9839C-F625-4BF6-96A4-8E14AA625F5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7D9839C-F625-4BF6-96A4-8E14AA625F5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7D9839C-F625-4BF6-96A4-8E14AA625F5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E27EAC58-773F-4E2B-94E3-314F413BD9CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E27EAC58-773F-4E2B-94E3-314F413BD9CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E27EAC58-773F-4E2B-94E3-314F413BD9CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E27EAC58-773F-4E2B-94E3-314F413BD9CA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8C59BA98-4175-410C-9DB5-DC06FC6B9115} = {556B9000-D323-4C3E-8EEB-F8379AF57D1A}
+		{7818EAD8-2021-48A6-B213-70459495F49D} = {556B9000-D323-4C3E-8EEB-F8379AF57D1A}
+		{556B9000-D323-4C3E-8EEB-F8379AF57D1A} = {D68D7E12-787E-44D8-8739-EC3EB2CEBA53}
+		{CF075169-22CF-4931-B891-ADF3D9CBDD5F} = {D68D7E12-787E-44D8-8739-EC3EB2CEBA53}
+		{A7D9839C-F625-4BF6-96A4-8E14AA625F5D} = {D68D7E12-787E-44D8-8739-EC3EB2CEBA53}
+		{E27EAC58-773F-4E2B-94E3-314F413BD9CA} = {D68D7E12-787E-44D8-8739-EC3EB2CEBA53}
+	EndGlobalSection
+EndGlobal

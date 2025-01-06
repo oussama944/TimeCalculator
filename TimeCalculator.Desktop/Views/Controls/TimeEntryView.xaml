@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UserControl x:Class="TimeCalculator.Desktop.Views.Controls.TimeEntryView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TimeCalculator.Desktop.Views.Controls" xmlns:viewmodels="clr-namespace:TimeCalculator.Desktop.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:TimeEntryViewModel}"
+             mc:Ignorable="d">
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Formulaire de saisie -->
+        <GroupBox Header="Nouvelle entrée" Grid.Row="0" Margin="0,0,0,10">
+            <Grid Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Content="Date :" Grid.Row="0" Grid.Column="0"/>
+
+                <DatePicker Grid.Row="0" Grid.Column="1" 
+                SelectedDate="{Binding SelectedDate2}"
+                Text="{Binding SelectedDate2,StringFormat={}{0:dd/MM/yyyy}}"
+            Language="fr-FR"/>
+
+                <Label Content="Matin :" Grid.Row="1" Grid.Column="0"/>
+                <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+                    <local:TimeInputControl x:Name="MorningStartTime"
+                                          Time="{Binding CurrentEntry.MorningStart, UpdateSourceTrigger=PropertyChanged}"
+                                         />
+                    <Label Content="à"/>
+                    <local:TimeInputControl x:Name="MorningEndTime"
+                                          Time="{Binding CurrentEntry.MorningEnd, UpdateSourceTrigger=PropertyChanged}"
+                                          />
+                </StackPanel>
+
+                <Label Content="Après-midi :" Grid.Row="1" Grid.Column="2"/>
+                <StackPanel Grid.Row="1" Grid.Column="3" Orientation="Horizontal">
+                    <local:TimeInputControl x:Name="AfternoonStartTime"
+                                          Time="{Binding CurrentEntry.AfternoonStart, UpdateSourceTrigger=PropertyChanged}"
+                                          />
+                    <Label Content="à"/>
+                    <local:TimeInputControl x:Name="AfternoonEndTime"
+                                          Time="{Binding CurrentEntry.AfternoonEnd, UpdateSourceTrigger=PropertyChanged}"/>
+                </StackPanel>
+
+                <Button Content="Enregistrer" Grid.Row="2" Grid.Column="3"
+                        Command="{Binding SaveCommand}"
+                        Margin="0,10,0,0"/>
+            </Grid>
+        </GroupBox>
+
+        <!-- Liste des entrées -->
+        <GroupBox Header="Entrées récentes" Grid.Row="2">
+            <DataGrid ItemsSource="{Binding Entries}"
+                      AutoGenerateColumns="False"
+                      IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Date" Binding="{Binding Date, StringFormat=d}"/>
+                    <DataGridTextColumn Header="Matin" Binding="{Binding MorningDuration}"/>
+                    <DataGridTextColumn Header="Après-midi" Binding="{Binding AfternoonDuration}"/>
+                    <DataGridTextColumn Header="Total" Binding="{Binding TotalWorkDuration}"/>
+                    <DataGridTextColumn Header="Pause déjeuner" Binding="{Binding LunchBreakDuration}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </GroupBox>
+    </Grid>
+</UserControl>
